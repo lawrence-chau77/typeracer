@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Specifications
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Acceptance criteria
+In order for your project to be declared as "complete" there are a couple of features which must be completed.
 
-## Available Scripts
+- It renders a hard coded paragraph somewhere on the screen
+- When typing the keystrokes are recorded, and progress is made if the keystroke matches the current letter in the paragraph
+- Visual indication that progress has been made
+    - e.g. Coloring letter to be green if it matches, red if it doesnt, and wont let you progress
+    - can think of your own method of doing it
+- Indication that the game is complete.
+- Any further UI modifications you want to do to it
 
-In the project directory, you can run:
+## Requirements
+- Typescript
+- can use .css files for styling
 
-### `npm start`
+## How to get started?
+First clone the repository and make an individual branch for yourself to work on
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`git checkout -b {branch_name}`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run the code, please run these commands:
+```
+npm install
+npm start
+```
 
-### `npm test`
+## Common Git Commands
+Please get familiar with these commands and google what they do, or ask for help
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**most common**
 
-### `npm run build`
+`git status` 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`git add {file_name}`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`git commit -m "{commit_message}"`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`git push -u origin {branch_name}`
 
-### `npm run eject`
+**common but less critical**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`git pull`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`git checkout main`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+`git pull origin main`
