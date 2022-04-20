@@ -1,0 +1,15 @@
+.input {
+    width: auto;
+    margin: auto;
+    position: initial;
+    justify-content: center;
+    align-items: center
+}
+
+.preview {
+    display: flex;
+    width: auto;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
