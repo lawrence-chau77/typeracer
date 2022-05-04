@@ -1,6 +1,8 @@
 .input {
+    
+    display: flex;
     width: auto;
-    margin: auto;
+    margin-top: 30px;
     position: initial;
     justify-content: center;
     align-items: center
