@@ -1,9 +1,11 @@
+import { prependListener } from "process";
 
 interface props {
     paragraph: string;
     input: string;
 }
 const Preview: React.FC<props> = ({ paragraph, input }) => {
+    
     const para = paragraph.split('');
     return (
         <div className='preview'>
@@ -11,10 +13,13 @@ const Preview: React.FC<props> = ({ paragraph, input }) => {
                 // Map each element of para array to its value and index 
                 para.map((s,i) => {
                     let color;
+                    if (s === ' ') {
+                        return <span key={i}>&nbsp;</span>
+                    }
                     if (i < input.length) {
                         color = s === input[i] ? 'green' : 'red';
                     }
-                    return <span key={i} style={{backgroundColor: color}}>{s} </span>
+                    return <span key={i} style={{backgroundColor: color}}>{s}</span>
                 })
             }
         </div>
