@@ -1,17 +1,16 @@
-import React from "react";
+import React, { KeyboardEventHandler } from "react";
 import "./styles.css";
 
 interface props {
     setInput: React.Dispatch<React.SetStateAction<string>>;
-    setParagraph: React.Dispatch<React.SetStateAction<string>>;
-    paragraph: string;
+    handleKeyUp: KeyboardEventHandler;
+    input: string;
     }
 
-const InputField: React.FC<props> = ({ setInput, setParagraph, paragraph }) => {
+const InputField: React.FC<props> = ({ setInput, handleKeyUp, input }) => {
     return (
         <form className='input'>
-            <input type='text' placeholder="Type Here" onChange={(e) => setInput(e.target.value)}/>
-                
+            <input value={input} type='text' placeholder="Type Here" onKeyUp={handleKeyUp} onChange={(e) => {setInput(e.target.value)}}/>           
         </form>
     );
 };

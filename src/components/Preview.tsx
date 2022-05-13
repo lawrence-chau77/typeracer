@@ -1,18 +1,17 @@
-import { prependListener } from "process";
-
 interface props {
     paragraph: string;
     input: string;
 }
-const Preview: React.FC<props> = ({ paragraph, input }) => {
-    
+
+const Preview: React.FC<props> = ({ paragraph, input }) => {   
     const para = paragraph.split('');
     return (
         <div className='preview'>
-            {
-                // Map each element of para array to its value and index 
+            {   
+                // For each element of the array
                 para.map((s,i) => {
                     let color;
+                    // makes the space appear in span if there was space in paragraph
                     if (s === ' ') {
                         return <span key={i}>&nbsp;</span>
                     }
