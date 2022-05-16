@@ -4,7 +4,7 @@ import InputField from './components/InputFeild';
 import Preview from './components/Preview';
 
 const App: React.FC = () => {
-  const text = 'Ah how shameless - the way these mortals blame the gods.'
+  const text = 'I have spoken words of hope. But only of hope. Hope is not victory. War is upon us and all our friends, a war in a which only the use of the Ring could give us surety of victory.'
   const textWords = text.split(' ')
   const [paragraph, setParagraph] = useState<string>(text)
   const [input, setInput] = useState<string>('')
