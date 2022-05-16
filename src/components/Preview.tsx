@@ -1,12 +1,15 @@
 interface props {
+    correctWords: string;
     paragraph: string;
     input: string;
 }
 
-const Preview: React.FC<props> = ({ paragraph, input }) => {   
+const Preview: React.FC<props> = ({ paragraph, input, correctWords }) => {   
+    let correct = true;
     const para = paragraph.split('');
     return (
         <div className='preview'>
+            <span>{correctWords}</span>
             {   
                 // For each element of the array
                 para.map((s,i) => {
@@ -16,7 +19,12 @@ const Preview: React.FC<props> = ({ paragraph, input }) => {
                         return <span key={i}>&nbsp;</span>
                     }
                     if (i < input.length) {
-                        color = s === input[i] ? 'green' : 'red';
+                        if (s === input[i] && correct === true) {
+                            color = 'green'
+                        } else {
+                            color = 'red'
+                            correct = false;
+                        }
                     }
                     return <span key={i} style={{backgroundColor: color}}>{s}</span>
                 })

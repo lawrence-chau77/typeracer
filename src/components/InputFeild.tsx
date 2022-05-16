@@ -3,14 +3,14 @@ import "./styles.css";
 
 interface props {
     setInput: React.Dispatch<React.SetStateAction<string>>;
-    handleKeyUp: KeyboardEventHandler;
+    handleKeyDown: KeyboardEventHandler;
     input: string;
     }
 
-const InputField: React.FC<props> = ({ setInput, handleKeyUp, input }) => {
+const InputField: React.FC<props> = ({ setInput, handleKeyDown, input }) => {
     return (
         <form className='input'>
-            <input value={input} type='text' placeholder="Type Here" onKeyUp={handleKeyUp} onChange={(e) => {setInput(e.target.value)}}/>           
+            <input value={input} type='text' placeholder="Type Here" onKeyDown={handleKeyDown} onChange={(e) => {setInput(e.target.value)}}/>           
         </form>
     );
 };
