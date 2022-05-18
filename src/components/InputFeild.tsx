@@ -1,16 +1,16 @@
-import React, { KeyboardEventHandler } from "react";
+import React, { ChangeEventHandler, KeyboardEventHandler } from "react";
 import "./styles.css";
 
 interface props {
-    setInput: React.Dispatch<React.SetStateAction<string>>;
+    handleOnChange: ChangeEventHandler;
     handleKeyDown: KeyboardEventHandler;
     input: string;
     }
 
-const InputField: React.FC<props> = ({ setInput, handleKeyDown, input }) => {
+const InputField: React.FC<props> = ({ handleKeyDown, handleOnChange, input }) => {
     return (
         <form className='input'>
-            <input value={input} type='text' placeholder="Type Here" onKeyDown={handleKeyDown} onChange={(e) => {setInput(e.target.value)}}/>           
+            <input value={input} type='text' placeholder="Type Here" onKeyDown={handleKeyDown} onChange={handleOnChange}/>           
         </form>
     );
 };
