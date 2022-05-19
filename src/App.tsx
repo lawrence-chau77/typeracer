@@ -15,7 +15,7 @@ const App: React.FC = () => {
   const [countDown, setCountDown] = useState<number>(60)
   const [timerStarted, setTimerStarted] = useState<boolean>(false)
   const [WPM, setWPM] = useState<number>(0)
-
+  
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
     if (!timerStarted) {
@@ -64,8 +64,9 @@ const App: React.FC = () => {
       <span className='timer'> {countDown} </span>
       <Preview paragraph={paragraph} input={input} correctWords={correctWords}/>
       <InputField handleKeyDown={handleKeyDown} handleOnChange={handleOnChange} input={input}/>
+      <span> WPM: {Math.floor((wordCount/5)/((60-countDown)/60))}</span>
     </div>
-  );
+  )
   else return (
     <div className='container'>
       <span className='result'>You Finished!</span>
